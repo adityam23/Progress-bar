@@ -7,12 +7,12 @@ int main ()
 {
     uint64_t iter = 0, i ;
     unsigned long int heads = 0, tails = 0;
-    int rNum = 0;
+    int rNum = 0, percen = 10;
     do
     {
         std::cout<<" Enter number of coin tosses to be simulated ";
         std::cin>>iter;
-    }while(iter>0);
+    }while(iter<=0);
     std::cout<<"\t\t- Progress bar - \n";
     std::cout<<"[";
     srand(time(NULL));
@@ -24,14 +24,16 @@ int main ()
 
         else
             tails++;
-        if(((int)((i/(double)iter)*100))%10==0)
+        if ((int)((i/(double)iter)*100)==percen)
         {
             std::cout<<"#";
+            percen+=10;
         }
     }
-    std::cout<<"]";
+    std::cout<<"#]";
     std::cout<<std::endl<<" Number of heads = "<<heads;
     std::cout<<" Number of tails = "<<tails;
     std::cout<<" Ratio of heads:tails = "<<heads<<" : "<<tails;
     return 0;
 }
+
