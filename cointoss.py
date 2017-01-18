@@ -1,4 +1,5 @@
 import random
+import sys
 num=input("Enter the number of times you want to run it:")
 heads=0
 tails=0
@@ -14,17 +15,17 @@ for i in range(0,num):
 		
 		tails=tails+1
 	if i==0:
-		print "[",
+		print ("[",end='',flush=True),
 	if i == int(status):
-		print "=",
+		print ("=",end='',flush=True),
 		status= prog/100.0 * num
 		prog=prog +5
 	if i==num-1:
-		print "]"
-print "Number of heads:%d"% heads
-print "Number of tails:%d"% tails
+		print ("]",flush=True)
+print ("Number of heads:",heads)
+print ("Number of tails:",tails)
 per=0.0
 per=float(heads)/num*100
-print "Percentage of heads:%.2f"% per
+print ("Percentage of heads:",round(per,2))
 per=float(tails)/num*100
-print "Percentage of tails:%.2f"% per
+print ("Percentage of tails:",round(per,2))
