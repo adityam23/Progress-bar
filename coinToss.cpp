@@ -7,7 +7,7 @@ int main ()
 {
     uint64_t iter = 0, i ;
     unsigned long int heads = 0, tails = 0;
-    int rNum = 0, percen = 10;
+    int rNum = 0, percen = 10, length = 10;
     do
     {
         std::cout<<" Enter number of coin tosses to be simulated ";
@@ -24,13 +24,22 @@ int main ()
 
         else
             tails++;
-        if ((int)((i/(double)iter)*100)==percen)
+        if (i==((percen*iter)/100)) //looks cleaner
         {
             std::cout<<"#";
             percen+=10;
+            length--;
         }
     }
-    std::cout<<"#]";
+    if (length>0)
+    {
+         while(length)
+        {
+            std::cout<<"#";
+            length--;
+        }
+    }
+    std::cout<<"]";
     std::cout<<std::endl<<" Number of heads = "<<heads;
     std::cout<<" Number of tails = "<<tails;
     std::cout<<" Ratio of heads:tails = "<<heads<<" : "<<tails;
