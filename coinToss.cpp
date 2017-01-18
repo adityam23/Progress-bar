@@ -32,10 +32,7 @@ int main ()
                 std::cout<<" ";
             std::cout<<"]"<<percen<<"% Completed"<<"\r"<<std::flush;
             percen+=10;
-            if(left)
-                left--;
        }
-
     }
     std::cout<<std::endl;
     std::cout<<std::endl<<" Number of heads = "<<heads;
